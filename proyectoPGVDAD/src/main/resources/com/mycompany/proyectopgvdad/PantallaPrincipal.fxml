@@ -11,41 +11,29 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectopgvdad.Primary">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="698.0" style="-fx-background-color: #595b5a;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectopgvdad.Primary">
    <children>
-      <Label layoutX="166.0" layoutY="34.0" prefHeight="48.0" prefWidth="293.0" text="Bienvenido a ServerMag">
+      <Label layoutX="203.0" layoutY="34.0" prefHeight="48.0" prefWidth="293.0" text="Bienvenido a ServerMag" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="24.0" />
          </font>
       </Label>
-      <TabPane layoutX="85.0" layoutY="93.0" prefHeight="288.0" prefWidth="467.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="81.0" layoutY="119.0" prefHeight="350.0" prefWidth="537.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Servidor 1">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="259.0" prefWidth="492.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="259.0" prefWidth="492.0" style="-fx-background-color: #14c3a2;">
                      <children>
-                        <PieChart layoutX="14.0" layoutY="30.0" prefHeight="109.0" prefWidth="200.0" title="Uso del CPU" />
-                        <PieChart layoutX="234.0" layoutY="30.0" prefHeight="144.0" prefWidth="147.0" title="Uso de la memoria" />
-                        <Button layoutX="208.0" layoutY="209.0" mnemonicParsing="false" text="Ver más" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Servidor 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <PieChart layoutX="23.0" layoutY="36.0" prefHeight="109.0" prefWidth="200.0" title="Uso del CPU" />
-                        <PieChart layoutX="234.0" layoutY="36.0" prefHeight="109.0" prefWidth="200.0" title="Uso de la memoria" />
-                        <Button layoutX="205.0" layoutY="211.0" mnemonicParsing="false" text="Ver más" />
+                        <PieChart layoutX="14.0" layoutY="48.0" prefHeight="177.0" prefWidth="249.0" title="Uso del CPU" />
+                        <PieChart layoutX="285.0" layoutY="44.0" prefHeight="185.0" prefWidth="238.0" title="Uso de la memoria" />
+                        <Button layoutX="239.0" layoutY="253.0" mnemonicParsing="false" style="-fx-background-color: #b8fd99;" text="Ver más" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <ImageView fitHeight="166.0" fitWidth="146.0" layoutX="-22.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="129.0" fitWidth="153.0" layoutX="44.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../Downloads/S-removebg-preview.png" />
          </image>
