@@ -4,10 +4,10 @@
  */
 package com.mycompany.proyectopgvdad;
 
-import javafx.fxml.Initializable;
-import oshi.SystemInfo;
-import oshi.hardware.CentralProcessor;
-import oshi.hardware.HardwareAbstractionLayer;
+
+//import oshi.SystemInfo;
+//import oshi.hardware.CentralProcessor;
+//import oshi.hardware.HardwareAbstractionLayer;
 
 /**
  *
@@ -15,11 +15,11 @@ import oshi.hardware.HardwareAbstractionLayer;
  */
 public class PruebasOshi {
 
-    public static void main(String[] args) {
-        SystemInfo si = new SystemInfo();
-        HardwareAbstractionLayer hal = si.getHardware();
-        CentralProcessor cpu = hal.getProcessor();
-        System.out.println(cpu.toString());
-        System.out.println(hal.getMemory().getAvailable());
-    }
+//    public static void main(String[] args) {
+//        SystemInfo si = new SystemInfo();
+//        HardwareAbstractionLayer hal = si.getHardware();
+//        CentralProcessor cpu = hal.getProcessor();
+//        System.out.println(cpu.toString());
+//        System.out.println(hal.getMemory().getAvailable());
+//    }
 }
