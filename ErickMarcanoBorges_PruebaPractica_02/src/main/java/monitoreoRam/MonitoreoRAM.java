@@ -30,6 +30,7 @@ public class MonitoreoRAM extends Thread {
 
     @Override
     public void run() {
+        int contador = 0;
         SystemInfo sistema = new SystemInfo();
         HardwareAbstractionLayer hardware = sistema.getHardware();
         long ramTotal = hardware.getMemory().getTotal();
@@ -38,11 +39,15 @@ public class MonitoreoRAM extends Thread {
             try {
                 ram = hardware.getMemory().getAvailable();
                 float disponible = (float) (ram * 9.3132e-10);
-                System.out.println(ram);
+                System.out.println(disponible);
+                if (contador == 0) {
+                   contador = 1;
+                   comprobarEstado(disponible, total);
+                }
                 comprobarEstado(disponible, total);
                 if (alerta) {
                     Correo correo = new Correo();
-                    correo.enviarMensajeTexto(correoAdmin, "elio0eri@gmail.com", "Prueba", "Hola", correoAdmin, clave);
+                    correo.enviarMensajeTexto(correoAdmin, "elio0eri@gmail.com", "(PruebaPracticaPGV) Alerta de RAM!!!", "La RAM está en un estado crítico, verifique que", correoAdmin, clave);
                     System.out.println("Email enviado con exito");
                     alerta = false;
                 }
@@ -58,9 +63,11 @@ public class MonitoreoRAM extends Thread {
     }
 
     private void comprobarEstado(float ramDisponible, float ramTotal) {
-        int linea = (int) (ramTotal * 80) / 100;
-        if () {
-
+        int lineaTotal = (int) (ramTotal * 80) / 100;
+        int linea = (int) (ramTotal - lineaTotal);
+        System.out.println(linea);
+        if (ramDisponible <= linea) {
+               alerta = true;
         }
     }
 
