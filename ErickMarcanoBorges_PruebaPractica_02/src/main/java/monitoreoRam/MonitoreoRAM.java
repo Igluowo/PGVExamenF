@@ -5,6 +5,7 @@
 package monitoreoRam;
 
 import controlarCorreo.Correo;
+import interfaces.Monitoreo;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
@@ -54,6 +55,7 @@ public class MonitoreoRAM extends Thread {
                     System.out.println("Email enviado con exito");
                     alerta = false;
                 }
+                Monitoreo.actualizarTextArea("Disponible: " + formatoDecimal.format(disponible) + "GB / Total: " + formatoDecimal.format(total) + "GB");
                 Thread.sleep(5000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(MonitoreoRAM.class.getName()).log(Level.SEVERE, null, ex);

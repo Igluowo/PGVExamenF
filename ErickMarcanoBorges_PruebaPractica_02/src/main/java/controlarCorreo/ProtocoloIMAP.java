@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import javax.mail.Folder;
 import javax.mail.Message;
@@ -27,6 +29,7 @@ import javax.mail.search.SubjectTerm;
 public class ProtocoloIMAP {
 
     public ProtocoloIMAP(String correo, String clave) throws IOException, MessagingException {
+        //Estableciendo las propiedades del protocola IMAP
         Properties propiedades = new Properties();
         propiedades.put("mail.store.protocol", "imap");
         propiedades.put("mail.imap.host", "imap.gmail.com");
@@ -38,11 +41,13 @@ public class ProtocoloIMAP {
         store.connect(propiedades.getProperty("mail.imap.host"), correo, clave);
         Folder folder = store.getFolder("INBOX");
         folder.open(Folder.READ_ONLY);
+        
+        //Creando el subjectTerm para buscar el prefijo y crear el archivo txt
         SubjectTerm prefijo = new SubjectTerm("(PruebaPracticaPGVERMB)");
         Message[] correos = folder.search(prefijo);
         String rutaArchivo = "src/main/resources/correos.txt";
         BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo));
-
+        List<Email> emails = new ArrayList<>();
         for (Message elemento : correos) {
             SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             writer.write("Asunto: " + elemento.getSubject());
@@ -51,13 +56,13 @@ public class ProtocoloIMAP {
             writer.newLine();
             writer.write("Cuerpo: " + elemento.getContent().toString());
             writer.newLine();
-
+            emails.add(new Email(elemento.getSubject(), formatoFecha.format(elemento.getSentDate())));
             System.out.println("Datos escritos en el archivo con éxito.");
         }
         writer.close();
         folder.close(false);
         store.close();
         CrearCSV crear = new CrearCSV();
-        crear.creacionCSV();
+        crear.crearCSV(emails);
     }
 }
