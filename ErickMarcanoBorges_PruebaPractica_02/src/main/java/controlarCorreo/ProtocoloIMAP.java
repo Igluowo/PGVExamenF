@@ -10,6 +10,7 @@ package controlarCorreo;
  */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,7 +40,7 @@ public class ProtocoloIMAP {
         folder.open(Folder.READ_ONLY);
         SubjectTerm prefijo = new SubjectTerm("(PruebaPracticaPGVERMB)");
         Message[] correos = folder.search(prefijo);
-        String rutaArchivo = "src/main/correos.txt";
+        String rutaArchivo = "src/main/resources/correos.txt";
         BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo));
 
         for (Message elemento : correos) {
@@ -56,6 +57,7 @@ public class ProtocoloIMAP {
         writer.close();
         folder.close(false);
         store.close();
-
+        CrearCSV crear = new CrearCSV();
+        crear.creacionCSV();
     }
 }
