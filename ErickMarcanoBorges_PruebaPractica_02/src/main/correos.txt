@@ -1,0 +1,12 @@
+Asunto: (PruebaPracticaPGVERMB) Alerta de RAM!!!
+Fecha: 2024-02-01 00:59:15
+Cuerpo: La RAM está en un estado crítico, verifique el estado de la máquina
+
+Asunto: (PruebaPracticaPGVERMB) Alerta de RAM!!!
+Fecha: 2024-02-01 00:59:27
+Cuerpo: La RAM está en un estado crítico, verifique el estado de la máquina
+
+Asunto: (PruebaPracticaPGVERMB) Alerta de RAM!!!
+Fecha: 2024-02-01 01:00:24
+Cuerpo: La RAM está en un estado crítico, verifique el estado de la máquina
+

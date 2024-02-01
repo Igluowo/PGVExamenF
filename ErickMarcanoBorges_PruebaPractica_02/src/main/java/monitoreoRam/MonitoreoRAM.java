@@ -6,6 +6,7 @@ package monitoreoRam;
 
 import controlarCorreo.Correo;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
@@ -39,7 +40,8 @@ public class MonitoreoRAM extends Thread {
             try {
                 ram = hardware.getMemory().getAvailable();
                 float disponible = (float) (ram * 9.3132e-10);
-                System.out.println(disponible);
+                DecimalFormat formatoDecimal = new DecimalFormat("#.##");
+                System.out.println(formatoDecimal.format(disponible));
                 if (contador == 0) {
                    contador = 1;
                    comprobarEstado(disponible, total);
@@ -47,7 +49,8 @@ public class MonitoreoRAM extends Thread {
                 comprobarEstado(disponible, total);
                 if (alerta) {
                     Correo correo = new Correo();
-                    correo.enviarMensajeTexto(correoAdmin, "elio0eri@gmail.com", "(PruebaPracticaPGV) Alerta de RAM!!!", "La RAM está en un estado crítico, verifique que", correoAdmin, clave);
+                    correo.enviarMensajeTexto(correoAdmin, "elio0eri@gmail.com", "(PruebaPracticaPGVERMB) Alerta de RAM!!!", 
+                            "La RAM está en un estado crítico, verifique el estado de la máquina", correoAdmin, clave);
                     System.out.println("Email enviado con exito");
                     alerta = false;
                 }
