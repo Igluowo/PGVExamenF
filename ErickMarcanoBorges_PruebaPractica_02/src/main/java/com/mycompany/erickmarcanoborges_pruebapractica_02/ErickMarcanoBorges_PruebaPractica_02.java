@@ -13,8 +13,10 @@ import java.util.List;
 import javax.mail.MessagingException;
 import monitoreoRam.MonitoreoRAM;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.data.JRCsvDataSource;
 import net.sf.jasperreports.view.JasperViewer;
@@ -34,7 +36,7 @@ public class ErickMarcanoBorges_PruebaPractica_02 {
         Thread.sleep(5000);
         JRCsvDataSource csv = new JRCsvDataSource(new File("src/main/resources/correos.csv"));
         try {
-            JasperPrint imprimir = JasperFillManager.fillReport("src/main/resources/correosRam.jasper", null, csv);
+            JasperPrint imprimir = JasperFillManager.fillReport("src/main/resources/correos.jasper", null, csv);
             JasperViewer.viewReport(imprimir, false);
         } catch (Exception e) {
             e.printStackTrace();

@@ -25,7 +25,7 @@ public class CrearCSV {
             archivoCSV.delete();
         }
 
-        writer.write("Asunto,Fecha\n");
+        writer.write("\"Asunto\",\"Fecha\"\n");
 
         try {
             while (true) {
@@ -34,8 +34,8 @@ public class CrearCSV {
                     break;
                 }
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                writer.write("\"" + datosCorreo[0] + "\",");
-                writer.write("\"" + dateFormat.format(datosCorreo[1]) + "\"\n");
+                writer.write((String) datosCorreo[0]);
+                writer.write("" + dateFormat.format(datosCorreo[1]));
             }
         } catch (IOException | ParseException e) {
             System.out.println("Advertencia: " + e.getMessage());

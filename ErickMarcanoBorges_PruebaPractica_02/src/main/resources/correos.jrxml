@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="correos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ec8d802d-80c1-4f4d-8a74-427de33288f0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CorreosCSV"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Asunto" class="java.lang.String"/>
+	<field name="Fecha" class="java.lang.String"/>
+	<group name="Asunto">
+		<groupExpression><![CDATA[$F{Asunto}]]></groupExpression>
+	</group>
+	<group name="Fecha">
+		<groupExpression><![CDATA[$F{Fecha}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="89" backcolor="#D3D0CB" uuid="0f277e02-b23c-4498-be65-a44d25f709a1"/>
+				<staticText>
+					<reportElement x="190" y="20" width="220" height="35" uuid="cdee677e-4635-4fef-835b-b95e914ee87b"/>
+					<textElement>
+						<font size="25"/>
+					</textElement>
+					<text><![CDATA[Informe de correos]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-10" width="595" height="66" backcolor="#D3D0CB" uuid="fcae66a7-1fdf-40f0-a839-3c714ef8d059"/>
+				<frame>
+					<reportElement mode="Opaque" x="22" y="10" width="540" height="45" backcolor="#E2C044" uuid="60bb511e-25d5-4aaa-bf7e-91815d64f832">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box bottomPadding="10">
+						<pen lineWidth="5.5" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="2.5" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="47" y="8" width="100" height="30" uuid="6e67cf6d-35df-4dd0-a8e2-a4371c5ef41a">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="482a7e1e-2a65-4cc0-92f9-03dc35dc1607"/>
+						</reportElement>
+						<text><![CDATA[Asunto]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="377" y="0" width="100" height="30" uuid="d72d8ee5-5c65-4f3e-898c-8978af049ae4">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bafec78b-60fa-4f15-9c7a-cca476a4f5f4"/>
+						</reportElement>
+						<text><![CDATA[Fecha]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-5" width="595" height="53" backcolor="#D3D0CB" uuid="25cb6a18-742e-4f6a-b5f0-8be639faa9e2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<frame>
+					<reportElement mode="Opaque" x="21" y="-11" width="543" height="54" backcolor="#587B7F" uuid="29fca558-4068-4377-a6a4-cc380b00409d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="3.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textField>
+						<reportElement x="40" y="12" width="100" height="30" uuid="0a0f94b4-7965-42a2-b7f3-7e5d04897b77">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="482a7e1e-2a65-4cc0-92f9-03dc35dc1607"/>
+						</reportElement>
+						<textFieldExpression><![CDATA[$F{Asunto}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="380" y="10" width="100" height="30" uuid="a8f8d5e6-cecb-4538-9698-e004639c3520">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bafec78b-60fa-4f15-9c7a-cca476a4f5f4"/>
+						</reportElement>
+						<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="315" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-5" width="595" height="320" backcolor="#D3D0CB" uuid="940160a4-36ca-4f74-913f-65c2573d3235">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<rectangle>
+					<reportElement x="260" y="100" width="56" height="50" backcolor="#E2C044" uuid="162d6be7-41cc-4581-b152-122d41b29ce0"/>
+				</rectangle>
+				<staticText>
+					<reportElement key="" x="213" y="40" width="148" height="30" uuid="2dc9fe21-f379-46bb-8547-65dbc7b56ea7"/>
+					<textElement>
+						<font size="15"/>
+					</textElement>
+					<text><![CDATA[Cantidad de correos]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
